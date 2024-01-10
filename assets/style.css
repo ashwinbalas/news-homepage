@@ -1,0 +1,268 @@
+:root {
+  /* Primary Colors */
+  --soft-orange: hsl(35, 77%, 62%);
+  --soft-red: hsl(5, 85%, 63%);
+
+  /* Neutral Colors */
+  --Off-white: hsl(36, 100%, 99%);
+  --grayish-blue: hsl(233, 8%, 79%);
+  --dark-grayish-blue: hsl(236, 13%, 42%);
+  --very-dark-blue: hsl(240, 100%, 5%);
+}
+html {
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  font-size: 15px;
+}
+/* Css reset */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+body.active {
+  background: #0000003a;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* utility calss */
+.container {
+  max-width: 1440px;
+  padding-inline: 6rem;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  padding-block: 0.5rem;
+  margin-bottom: 2rem;
+}
+.header .logo {
+  max-width: 4rem;
+}
+.header .navbar {
+  position: relative;
+}
+.header .navbar .navbar-nav {
+  display: flex;
+  gap: 1rem;
+}
+.header .navbar .navbar-nav .nav-item {
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.header .navbar .navbar-nav .nav-item:hover{
+  color: var(--soft-red);
+}
+
+.header #menu-toggler {
+  display: none;
+  position: relative;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.banner {
+  display: flex;
+  gap: 2rem;
+}
+.banner .main-blog .blog-detail{
+  display: flex;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.banner .main-blog .blog-detail h1 {
+  color: var(--very-dark-blue);
+  font-weight: 800;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-right: 3rem;
+}
+
+.banner .main-blog .blog-detail p{
+  color: var(--dark-grayish-blue);
+  padding: 0 2rem 2rem 0;
+}
+.banner .main-blog .blog-detail button{
+  outline: none;
+  border: none;
+  padding: 0.6rem 2rem;
+  background-color: var(--soft-red);
+  color: var(--Off-white);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.banner .main-blog .blog-detail button:hover{
+  background-color: var(--very-dark-blue);
+}
+.banner .new-blogs{
+  background-color: var(--very-dark-blue);
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.banner .new-blogs h2{
+  color: var(--soft-orange);
+  font-size: 2.4rem;
+}
+.banner .new-blogs .new-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.banner .new-blogs .new-container hr{
+  background-color: var(--Off-white);
+}
+.banner .new-blogs .article{
+  padding: 1.5rem 0;
+}
+.banner .new-blogs .article h3{
+  color: var(--Off-white);
+}
+.banner .new-blogs .article p{
+  color: var(--grayish-blue);
+  padding-block: 0.5rem;
+}
+
+.top-blogs{
+  display: flex;
+  margin-block: 1rem;
+  gap: 1rem;
+}
+.top-blogs .top-article{
+  display: flex;
+  gap: 1rem;
+}
+.top-blogs .top-article img{
+  max-width: 100px;
+}
+.top-blogs .top-article .article-detail{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.top-blogs .top-article .article-detail span{
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--grayish-blue);
+}
+.top-blogs .top-article .article-detail h4{
+  font-size: 1.4rem;
+}
+.top-blogs .top-article .article-detail p{
+  color: var(--dark-grayish-blue);
+}
+
+/* media query */
+
+@media (max-width:1024px){
+  .container{
+    padding-inline: 1rem;
+  }
+}
+
+
+@media (max-width:768px) {
+  .container{
+    padding-inline: 2rem;
+  }
+  .banner{
+    flex-direction: column;
+  }
+  .top-blogs{
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 425px) {
+  .container{
+    padding-inline: 1rem;
+  }
+  .header #menu-toggler {
+    display: block;
+    z-index: 101;
+  }
+  .header .navbar {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--Off-white);
+    z-index: 100;
+    transition: 0.5s;
+  }
+  .header .navbar.active {
+    left: 35%;
+  }
+  .header .navbar .navbar-nav {
+    flex-direction: column;
+    position: relative;
+    padding-left: 1.5rem;
+    top: 20%;
+  }
+  .header .navbar .navbar-nav .nav-item {
+    font-size: 1.2rem;
+  }
+  .banner{
+    flex-direction: column;
+  }
+  .banner .main-blog .blog-detail{
+    flex-direction: column;
+  }
+  .banner .main-blog .blog-detail h1 {
+    margin-bottom: 1rem;
+  }
+  .top-blogs{
+    flex-direction: column;
+  }
+}
